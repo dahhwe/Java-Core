@@ -1,0 +1,22 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="config.properties"/>
+        <bean id="personalComputer" class="ru.second.JavaCore.PersonalComputer">
+            <constructor-arg value="${processor}"/>
+            <property name="processor" value="${processor}"/>
+            <property name="memory" value="${memory}"/>
+            <property name="videocard" value="${videocard}"/>
+            <property name="hardDrive" value="${hardDrive}"/>
+        </bean>
+
+        <bean id="user" class="ru.second.JavaCore.User">
+            <constructor-arg ref="personalComputer"/>
+        </bean>
+    </beans>
+

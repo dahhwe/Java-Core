@@ -71,7 +71,7 @@ psql -U postgres -d furniture -f init.sql
 
 ## Инструкция по сборке и запуску Java-проекта из командной строки
 
-### 1. Установите JDK JDK и Maven:
+### 1. Установите JDK и Maven:
 
 Убедитесь, что на Вашем компьютере
 установлены [JDK](https://www.oracle.com/java/technologies/downloads/)

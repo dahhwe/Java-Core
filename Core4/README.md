@@ -31,6 +31,11 @@
 ### 1. Установите PostgreSQL:
 
 Убедитесь, что на Вашем компьютере установлен [PostgreSQL](https://www.postgresql.org/download/).
+Для установки PostgreSQL на Linux Ubuntu / Debian, можно воспользоваться менеджером пакетов:
+```
+sudo apt-get update
+sudo apt-get install postgresql postgresql-contrib
+```
 
 ### 2. Создайте базу данных и пользователя:
 

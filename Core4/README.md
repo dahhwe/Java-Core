@@ -31,6 +31,11 @@
 ### 1. Установите PostgreSQL:
 
 Убедитесь, что на Вашем компьютере установлен [PostgreSQL](https://www.postgresql.org/download/).
+Для установки PostgreSQL на Linux Ubuntu / Debian, можно воспользоваться менеджером пакетов:
+```
+sudo apt-get update
+sudo apt-get install postgresql postgresql-contrib
+```
 
 ### 2. Создайте базу данных и пользователя:
 
@@ -66,7 +71,7 @@ psql -U postgres -d furniture -f init.sql
 
 ## Инструкция по сборке и запуску Java-проекта из командной строки
 
-### 1. Установите JDK JDK и Maven:
+### 1. Установите JDK и Maven:
 
 Убедитесь, что на Вашем компьютере
 установлены [JDK](https://www.oracle.com/java/technologies/downloads/)

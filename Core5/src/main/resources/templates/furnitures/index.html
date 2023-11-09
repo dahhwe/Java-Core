@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Furniture</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+<div th:replace="~{furnitures/header :: header}"></div>
+<form th:action="@{/furniture/new}" th:method="GET">
+    <button type="submit">Add new furniture</button>
+</form>
+
+<form th:action="@{/furniture}" th:method="get">
+    <label for="name">Название:</label>
+    <input type="text" id="name" name="name"
+           required>
+    <br/><br/>
+    <button type="submit" class="btn btn-primary">Найти по названию</button>
+</form>
+
+<div th:each="furniture : ${furnitures}" class="col s12 m6">
+    <span th:text="${furniture.getName()+ ' made with ' + furniture.getMaterial()}"></span>
+    <span th:text="${furniture.getStyle()}"></span>
+    <span th:text="${furniture.getPrice() + ' $'}"></span>
+    <span th:text="${furniture.getQuantity()} + ' in stock'"></span>
+    <a th:href="@{/furniture/{id}(id=${furniture.getId()})}">open</a>
+</div>
+</body>
+</html>

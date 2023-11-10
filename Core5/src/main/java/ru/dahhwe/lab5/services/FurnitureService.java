@@ -1,6 +1,5 @@
 package ru.dahhwe.lab5.services;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,39 +8,47 @@ import ru.dahhwe.lab5.repository.FurnitureRepository;
 
 import java.util.List;
 
+/**
+ * Сервис для работы с мебелью.
+ */
 @Service
 @Transactional(readOnly = true)
 public class FurnitureService {
-    FurnitureRepository repository;
+    private final FurnitureRepository repository;
 
+    /**
+     * Конструктор для внедрения зависимости репозитория мебели.
+     *
+     * @param repository Репозиторий мебели.
+     */
     @Autowired
     public FurnitureService(FurnitureRepository repository) {
         this.repository = repository;
     }
 
     /**
-     * Получает все музыкальные инструменты.
+     * Получает все записи мебели.
      *
-     * @return список музыкальных инструментов
+     * @return Список мебели.
      */
     public List<Furniture> findAll() {
         return repository.findAll();
     }
 
     /**
-     * Находит музыкальный инструмент по идентификатору.
+     * Находит мебель по идентификатору.
      *
-     * @param id идентификатор инструмента
-     * @return найденный инструмент или null, если не найден
+     * @param id Идентификатор мебели.
+     * @return Найденная мебель или null, если мебель не найдена.
      */
     public Furniture findOne(int id) {
         return repository.findById(id).orElse(null);
     }
 
     /**
-     * Сохраняет новый музыкальный инструмент.
+     * Сохраняет новую запись мебели.
      *
-     * @param furniture объект музыкального инструмента
+     * @param furniture Объект мебели для сохранения.
      */
     @Transactional
     public void save(Furniture furniture) {
@@ -49,10 +56,10 @@ public class FurnitureService {
     }
 
     /**
-     * Обновляет информацию о музыкальном инструменте.
+     * Обновляет информацию о мебели.
      *
-     * @param id        идентификатор инструмента
-     * @param furniture объект музыкального инструмента
+     * @param id        Идентификатор мебели.
+     * @param furniture Объект мебели для обновления.
      */
     @Transactional
     public void update(int id, Furniture furniture) {
@@ -61,15 +68,31 @@ public class FurnitureService {
     }
 
     /**
-     * Удаляет музыкальный инструмент по идентификатору.
+     * Удаляет мебель по идентификатору.
      *
-     * @param id идентификатор инструмента
+     * @param id Идентификатор мебели для удаления.
      */
     @Transactional
     public void delete(int id) {
         repository.deleteById(id);
     }
 
+    /**
+     * Проверяет отсутствие мебели в базе данных по идентификатору.
+     *
+     * @param id Идентификатор мебели для проверки.
+     * @return true, если мебель отсутствует, иначе false.
+     */
+    public boolean doesNotExist(int id) {
+        return !repository.existsById(id);
+    }
+
+    /**
+     * Фильтрует мебель по имени.
+     *
+     * @param name Имя для фильтрации мебели.
+     * @return Список мебели, соответствующей заданному имени.
+     */
     public List<Furniture> filterByName(String name) {
         return repository.findByNameContains(name);
     }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${furniture.getName()}"></title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div th:replace="furnitures/header :: header"></div>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title" th:text="${furniture.name}">Furniture Name</h5>
+            <p class="card-text" th:text="'Material: ' + ${furniture.material}">Material</p>
+            <p class="card-text" th:text="'Style: ' + ${furniture.style}">Style</p>
+            <p class="card-text" th:text="'Price: ' + ${furniture.price} + ' $'">Price</p>
+            <p class="card-text" th:text="'Quantity: ' + ${furniture.quantity} + ' in stock'">Quantity</p>
+            <a th:href="@{/furniture/{id}/edit(id=${furniture.id})}" class="btn btn-primary">Edit</a>
+            <form th:action="@{/furniture/{id}(id=${furniture.id})}" method="post" style="display: inline;">
+                <input type="hidden" name="_method" value="delete"/>
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

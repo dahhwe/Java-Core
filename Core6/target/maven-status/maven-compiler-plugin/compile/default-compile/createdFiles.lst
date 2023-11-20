@@ -1,0 +1,5 @@
+ru\dahhwe\lab5\models\Furniture.class
+ru\dahhwe\lab5\controllers\FurnitureController.class
+ru\dahhwe\lab5\repository\FurnitureRepository.class
+ru\dahhwe\lab5\Lab5Application.class
+ru\dahhwe\lab5\services\FurnitureService.class

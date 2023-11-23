@@ -1,6 +1,7 @@
 package ru.dahhwe.lab5.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.dahhwe.lab5.models.Furniture;
@@ -51,6 +52,7 @@ public class FurnitureService {
      * @param furniture Объект мебели для сохранения.
      */
     @Transactional
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public void save(Furniture furniture) {
         repository.save(furniture);
     }
@@ -62,6 +64,7 @@ public class FurnitureService {
      * @param furniture Объект мебели для обновления.
      */
     @Transactional
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public void update(int id, Furniture furniture) {
         furniture.setId(id);
         repository.save(furniture);
@@ -73,6 +76,7 @@ public class FurnitureService {
      * @param id Идентификатор мебели для удаления.
      */
     @Transactional
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public void delete(int id) {
         repository.deleteById(id);
     }

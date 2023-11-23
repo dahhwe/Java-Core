@@ -1,19 +1,21 @@
 package ru.dahhwe.lab5.controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-@Controller
+/**
+ * Контроллер для обработки запросов аутентификации.
+ */
+@Controller // Аннотация, указывающая, что этот класс является веб-контроллером.
 public class LoginController {
 
+    /**
+     * Обрабатывает GET запросы для страницы входа в систему.
+     *
+     * @return Путь к шаблону страницы входа.
+     */
     @GetMapping("/login")
-    public String login(@RequestParam(value = "error", required = false) String error, Model model) {
-        if (error != null) {
-            model.addAttribute("loginError", true);
-        }
-        return "furnitures/login";
+    public String login() {
+        return "furnitures/login"; // Возвращает имя представления для отображения страницы входа.
     }
-
 }

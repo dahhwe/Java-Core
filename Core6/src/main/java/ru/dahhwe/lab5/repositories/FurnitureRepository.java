@@ -7,12 +7,17 @@ import ru.dahhwe.lab5.models.Furniture;
 import java.util.List;
 
 /**
- * Репозиторий для работы с сущностями мебели.
+ * Репозиторий для работы с сущностями мебели, предоставляющий операции CRUD и поиска.
  */
 @Repository
 public interface FurnitureRepository extends JpaRepository<Furniture, Integer> {
 
-    // Находит все записи мебели, имя которых содержит заданную подстроку.
+    /**
+     * Поиск записей мебели, имя которых содержит заданную подстроку.
+     *
+     * @param name Подстрока для поиска в имени мебели.
+     * @return Список мебели, соответствующей критериям поиска.
+     */
     List<Furniture> findByNameContains(String name);
 
 }

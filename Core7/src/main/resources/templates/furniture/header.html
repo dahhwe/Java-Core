@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logout</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Ссылка на внешний CSS файл -->
+</head>
+<body>
+<header th:fragment="header">
+    <!-- Форма для выхода из аккаунта -->
+    <form th:action="@{/logout}" method="post" id="logoutForm">
+        <input type="submit" value="Выйти" class="btn">
+    </form>
+    <!-- Ссылка на главную страницу, если не находимся на ней -->
+    <div th:unless="${currentPage == 'index'}">
+        <a href="/furniture" class="brand-logo">В начало</a>
+    </div>
+</header>
+</body>
+</html>

@@ -1,0 +1,16 @@
+ru\dahhwe\lab7\controllers\RegistrationController.class
+ru\dahhwe\lab7\config\WebSecurityConfig.class
+ru\dahhwe\lab7\controllers\FurnitureWebController.class
+ru\dahhwe\lab7\security\UserDetailsImpl.class
+ru\dahhwe\lab7\services\UserDetailsServiceImpl.class
+ru\dahhwe\lab7\models\User.class
+ru\dahhwe\lab7\models\Role.class
+ru\dahhwe\lab7\controllers\LoginController.class
+ru\dahhwe\lab7\models\Furniture.class
+ru\dahhwe\lab7\repositories\FurnitureRepository.class
+ru\dahhwe\lab7\controllers\FurnitureRestController.class
+ru\dahhwe\lab7\services\FurnitureService.class
+ru\dahhwe\lab7\services\UserService.class
+ru\dahhwe\lab7\Lab7Application.class
+ru\dahhwe\lab7\repositories\RoleRepository.class
+ru\dahhwe\lab7\repositories\UserRepository.class

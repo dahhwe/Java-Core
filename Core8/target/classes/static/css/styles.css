@@ -1,0 +1,39 @@
+/* Сброс отступов для тега body */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Стили для шапки */
+header {
+    background-color: #007bff; /* Синий фон */
+    color: white; /* Белый текст */
+    padding: 10px 0; /* Внутренние отступы */
+    margin: 0; /* Сброс стандартных отступов */
+}
+
+/* Стили для ссылок в шапке */
+header a {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+}
+
+/* Эффект при наведении на ссылки */
+header a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для кнопок */
+.btn {
+    background-color: #007bff; /* Синий фон */
+    color: white; /* Белый текст */
+    border: none; /* Убрать границы */
+    padding: 10px 20px; /* Внутренние отступы */
+    margin: 10px; /* Внешние отступы */
+    cursor: pointer; /* Курсор в виде указателя */
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Темно-синий фон при наведении */
+}
